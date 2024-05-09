@@ -1,22 +1,22 @@
 -- Crear tabla users
 CREATE TABLE users (
-  id_author serial NOT NULL PRIMARY KEY, 
+  id_user serial NOT NULL PRIMARY KEY, 
   name varchar(45), 
   surname varchar(45), 
   email varchar(100) NOT NULL UNIQUE,
-  favs varchar(255)
+  password varchar(255) NOT NULL
 );
 
 
 -- Insertar datos en tabla users
-INSERT INTO users(name,surname,email,favs)
+INSERT INTO users(name,surname,email,password)
 VALUES
-('Paolo','Sanz','Paolo@thebridgeschool.es','Blondie, Jackson Five'),
-('Adriano','Rivera','Adriano@thebridgeschool.es','Oliver y Benji, KaseO'),
+('Paolo','Sanz','Paolo@thebridgeschool.es','123456'),
+('Adriano','Rivera','Adriano@thebridgeschool.es','123456'),
 
 
-INSERT INTO users(name,surname,email,favs) 
-      VALUES ('Pepito','Perez','pepito@code.com','Solomun, Wu Tang Clan')
+INSERT INTO users(name,surname,email,password) 
+      VALUES ('Pepito','Perez','pepito@code.com','123456')
 
 
 UPDATE users
@@ -24,7 +24,7 @@ UPDATE users
           name='Papito', 
           surname='Pared', 
           email='papito@codewars.com', 
-          favs='KaseO, Wu Tang Clan'
+          password='123456'
       WHERE 
           email = 'pepito@code.com'
 
