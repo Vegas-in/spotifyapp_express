@@ -20,7 +20,7 @@ const getUserByEmail = async (email) => {
 
 // CREATE
 const createUser = async (user) => {
-  const { name, surname, email, favs } = user;
+  const { name, surname, email, password } = user;
   let client, result;
   try {
     client = await pool.connect(); // Espera a abrir conexion
@@ -28,7 +28,7 @@ const createUser = async (user) => {
       name,
       surname,
       email,
-      favs,
+      password,
     ]);
     result = data.rowCount;
   } catch (err) {
@@ -42,7 +42,7 @@ const createUser = async (user) => {
 
 //UPDATE
 const updateUser = async (user) => {
-  const { name, surname, email, favs} = user;
+  const { name, surname, email, password} = user;
   let client, result;
   try {
     client = await pool.connect(); // Espera a abrir conexion
@@ -50,7 +50,7 @@ const updateUser = async (user) => {
       name,
       surname,
       email,
-      favs,
+      password,
     ]);
     result = data.rowCount;
   } catch (err) {
