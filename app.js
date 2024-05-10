@@ -9,10 +9,10 @@ const userRoutes = require("./routes/user.routes")
 
 //Middlewares
 app.use(express.json()); // Para parsear el body de las peticiones
-const error404 = require("./middlewares/error404");
-const morgan = require("./middlewares/morgan");
+//const error404 = require("./middlewares/error404");
+//const morgan = require("./middlewares/morgan");
 
-app.use(morgan(':method :host :status :param[id] - :response-time ms :body'));
+//app.use(morgan(':method :host :status :param[id] - :response-time ms :body'));
 
 app.use(cors());
 
@@ -28,7 +28,7 @@ app.use('/api/user',userRoutes);
 
 
 //app.use(error404);
-app.use("*", error404); // Middleware que gestiona el error 404
+//app.use("*", error404); // Middleware que gestiona el error 404
 
 // http://localhost:3000
 app.listen(port, () => {

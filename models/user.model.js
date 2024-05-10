@@ -1,4 +1,4 @@
-const pool = require("../config/db_pgsql");
+const pool = require("../config/db_pgsql.js");
 const queries = require("../queries/user.queries"); // Queries SQL
 
 // GET
@@ -19,6 +19,12 @@ const getUserByEmail = async (email) => {
 
 
 // CREATE
+/* {
+  "name": "angelillo",
+  "surname": "perez",
+  "email": "adri@thebridgeschool.es",
+  "password": "123456"
+} */
 const createUser = async (user) => {
   const { name, surname, email, password } = user;
   let client, result;
@@ -78,11 +84,11 @@ const deleteUser = async (email) => {
   return result;
 };
 
-const entries = {
+const user = {
   getUserByEmail,
   createUser,
   updateUser,
   deleteUser
 };
 
-module.exports = entries;
+module.exports = user;
